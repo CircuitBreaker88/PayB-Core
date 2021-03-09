@@ -1,1 +1,241 @@
 Here you will see the test results of each and every solidity file that is in this repository.
+Recommended to use ganace and node >=v10
+Dont forget to add
+yarn global add ganache-cli
+
+-----------------------------------------------
+
+PayB-Core
+
+$ yarn compile
+$ yarn clean
+$ rimraf ./build/
+$ waffle .waffle.json
+$ mocha
+
+
+  PayBERC20
+    ✓ name, symbol, decimals, totalSupply, balanceOf, DOMAIN_SEPARATOR, PERMIT_TYPEHASH (218ms)
+    ✓ approve (193ms)
+    ✓ transfer (175ms)
+    ✓ transfer:fail (79ms)
+    ✓ transferFrom (322ms)
+    ✓ transferFrom:max (274ms)
+    ✓ permit (282ms)
+
+  PayBFactory
+    ✓ feeTo, feeToSetter, allPairsLength (55ms)
+    ✓ createPair (560ms)
+    ✓ createPair:reverse (589ms)
+    ✓ createPair:gas (195ms)
+    ✓ setFeeTo (120ms)
+    ✓ setFeeToSetter (145ms)
+
+  PayBPair
+    ✓ mint (469ms)
+    ✓ getInputPrice:0 (524ms)
+    ✓ getInputPrice:1 (500ms)
+    ✓ getInputPrice:2 (485ms)
+    ✓ getInputPrice:3 (493ms)
+    ✓ getInputPrice:4 (490ms)
+    ✓ getInputPrice:5 (426ms)
+    ✓ getInputPrice:6 (593ms)
+    ✓ optimistic:0 (450ms)
+    ✓ optimistic:1 (493ms)
+    ✓ optimistic:2 (461ms)
+    ✓ optimistic:3 (482ms)
+    ✓ swap:token0 (532ms)
+    ✓ swap:token1 (580ms)
+    ✓ swap:gas (522ms)
+    ✓ burn (402ms)
+    ✓ price{0,1}CumulativeLast (499ms)
+    ✓ feeTo:off (407ms)
+    ✓ feeTo:on (508ms)
+
+
+  32 passing (15s)
+
+✨  Done in 37.08s.
+----------------------------------------------------
+Farm-Core
+
+Compiled 22 contracts successfully
+
+
+  Contract: BnbStaking.......
+Your project has Truffle migrations, which have to be turn into a fixture to run your tests with Buidler
+    ✓ deposit/withdraw (760ms)
+    ✓ should block man who in blanklist (261ms)
+    ✓ emergencyWithdraw (248ms)
+    ✓ emergencyRewardWithdraw (135ms)
+    ✓ setLimitAmount (58ms)
+
+  Contract: PayToken
+    ✓ mint (50ms)
+
+  Contract: MasterChef
+    ✓ real case (387ms)
+    ✓ setReceiver (213ms)
+    ✓ emergencyWithdraw
+    ✓ update admin (69ms)
+
+  Contract: MasterChef
+    ✓ real case (746ms)
+    ✓ deposit/withdraw (408ms)
+    ✓ staking/unstaking (312ms)
+    ✓ updaate multiplier (763ms)
+    ✓ should allow dev and only dev to update dev (61ms)
+
+  Contract: SousChef
+    ✓ sous chef now (1026ms)
+    ✓ try syrup (800ms)
+    ✓ emergencyWithdraw (101ms)
+
+  Contract: SyrupBar
+    ✓ mint
+    ✓ burn (136ms)
+    ✓ safePayTransfer (75ms)
+
+  Contract: Timelock
+    ✓ should not allow non-owner to do operation (72ms)
+    ✓ should do the timelock thing (85ms)
+    ✓ should also work with MasterChef (310ms)
+
+
+  24 passing (13s)
+
+✨  Done in 30.70s.
+----------------------------------------------------------
+IFO-Core
+
+Compiled 17 contracts successfully
+web3-shh package will be deprecated in version 1.3.5 and will no longer be supported.
+web3-bzz package will be deprecated in version 1.3.5 and will no longer be supported.
+web3-shh package will be deprecated in version 1.3.5 and will no longer be supported.
+web3-bzz package will be deprecated in version 1.3.5 and will no longer be supported.
+
+
+  Contract: IFO
+Your project has Truffle migrations, which have to be turn into a fixture to run your tests with Buidler
+    ✓ raise not enough lp (1006ms)
+    ✓ raise enough++ lp (1392ms)
+    ✓ raise enough lp (898ms)
+
+
+  3 passing (4s)
+
+✨  Done in 12.93s.
+-----------------------------------------------------------
+PayB-Core-lib
+
+yarn run v1.22.10
+$ yarn compile
+$ rimraf ./build/
+$ waffle
+contracts/utils/Memory.sol: Warning: SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing "SPDX-License-Identifier: <SPDX-License>" to each source file. Use "SPDX-License-Identifier: UNLICENSED" for non-open-source code. Please see https://spdx.org for more information.
+
+$ mocha
+
+
+  AddressStringUtil
+    #toAsciiString
+      ✓ zero address (187ms)
+      ✓ own address (75ms)
+      ✓ random address (71ms)
+      ✓ reverts if len % 2 != 0 (40ms)
+      ✓ reverts if len >= 40 (41ms)
+      ✓ reverts if len == 0 (46ms)
+      ✓ produces len characters (128ms)
+
+  FixedPoint
+    #encode
+      ✓ shifts left by 112 (39ms)
+      ✓ will not take >uint112(-1)
+    #encode144
+      ✓ shifts left by 112 (53ms)
+      ✓ will not take >uint144(-1)
+    #decode
+      ✓ shifts right by 112
+      ✓ will not take >uint224(-1)
+    #decode144
+      ✓ shifts right by 112 (38ms)
+      ✓ will not take >uint256(-1)
+    #div
+      ✓ correct division
+      ✓ throws for div by zero
+    #mul
+      ✓ correct multiplication
+      ✓ overflow
+      ✓ max of q112x112
+    #fraction
+      ✓ correct computation less than 1
+      ✓ correct computation greater than 1
+      ✓ fails with 0 denominator
+    #reciprocal
+      ✓ works for 0.25
+      ✓ fails for 0
+      ✓ works for 5
+    #sqrt
+      ✓ works for 25 (53ms)
+      ✓ works with numbers less than 1 (58ms)
+      ✓ works with 0
+
+  PairNamer
+    #pairName
+      ✓ concatenation (273ms)
+    #pairSymbol
+      ✓ concatenation (281ms)
+
+  SafeBEP20Namer
+    #tokenName
+      ✓ works with compliant (143ms)
+      ✓ works with noncompliant (145ms)
+      ✓ works with empty bytes32 (147ms)
+      ✓ works with noncompliant full bytes32 (186ms)
+      ✓ works with optional (129ms)
+      ✓ works with non-code address (58ms)
+      ✓ works with really long strings (218ms)
+      ✓ falls back to address with empty strings (180ms)
+    #tokenSymbol
+      ✓ works with compliant (121ms)
+      ✓ works with noncompliant (94ms)
+      ✓ works with empty bytes32 (97ms)
+      ✓ works with noncompliant full bytes32 (114ms)
+      ✓ works with optional (77ms)
+      ✓ works with non-code address
+      ✓ works with really long strings (137ms)
+      ✓ falls back to address with empty strings (93ms)
+
+  SafeMathTest
+    #sqrt
+      ✓ works for 0-99 (1558ms)
+      ✓ max uint256
+
+  TransferHelper
+    #safeApprove
+      ✓ succeeds with compliant with no revert and true return (147ms)
+      ✓ fails with compliant with no revert and false return (99ms)
+      ✓ fails with compliant with revert (98ms)
+      ✓ succeeds with noncompliant (no return) with no revert (229ms)
+      ✓ fails with noncompliant (no return) with revert (91ms)
+    #safeTransfer
+      ✓ succeeds with compliant with no revert and true return (149ms)
+      ✓ fails with compliant with no revert and false return (94ms)
+      ✓ fails with compliant with revert (95ms)
+      ✓ succeeds with noncompliant (no return) with no revert (139ms)
+      ✓ fails with noncompliant (no return) with revert (94ms)
+    #safeTransferFrom
+      ✓ succeeds with compliant with no revert and true return (135ms)
+      ✓ fails with compliant with no revert and false return (93ms)
+      ✓ fails with compliant with revert (95ms)
+      ✓ succeeds with noncompliant (no return) with no revert (137ms)
+      ✓ fails with noncompliant (no return) with revert (93ms)
+    #safeTransferBNB
+      ✓ succeeds call not reverted (221ms)
+      ✓ fails if call reverts (99ms)
+
+
+  66 passing (9s)
+
+✨  Done in 32.71s.
+----------------------------------------------------------------------------------

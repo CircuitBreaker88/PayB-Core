@@ -7,7 +7,7 @@ The current repo is not set for launch, but the contracts have been tested using
 Goose Finance
 
 After looking into goose finance I think your information is incorrect on improvements, there are definitely changes, but I do not see these changes being of benefit in fact it seem they stuff functions that were held in other contracts and compress libs where for example the lottery system has many contracts for interactions and functions. While the goose variant has the bare minimum.
-Therefore I decided only to incorporate ANYSWAP into the paybs fork, seeing as they are a more sound project with a similar target in mind.
+Therefore I decided only to incorporate ANYSWAP into the pancakes fork, seeing as they are a more sound project with a similar target in mind.
 
 The basic bridge fork is also in the repository under Bridge. This is a NOT fully tested bridge based on the anyswap bridge with minimal changes so far.
 
