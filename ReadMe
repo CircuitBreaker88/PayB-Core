@@ -1,0 +1,21 @@
+This PayB-Core repository contains ALL the needed repositories.
+Normally split into different github repos.
+It would be to make each folder (Factory, Farm, IFO, Lottery, Periphery, and Swap) its own Github Repo.
+The current repo is not set for launch, but the contracts have been tested using the test.js files ( See test report file )
+
+
+Goose Finance
+
+After looking into goose finance I think your information is incorrect on improvements, there are definitely changes, but I do not see these changes being of benefit in fact it seem they stuff functions that were held in other contracts and compress libs where for example the lottery system has many contracts for interactions and functions. While the goose variant has the bare minimum.
+Therefore I decided only to incorporate ANYSWAP into the paybs fork, seeing as they are a more sound project with a similar target in mind.
+
+The basic bridge fork is also in the repository under Bridge. This is a NOT fully tested bridge based on the anyswap bridge with minimal changes so far.
+
+PayBSwap
+
+After looking into it this and the shown anyswap see to be the most supported projects other than the mentioned ETH based swap projects such as UniSwap/SushiSwap. As I said as well we should prepare a SushiSwap Fork as well for the swap interface to be on ETH chain as well.
+This SushiSwap fork is in the Folder PayBSushi - and like the PayB-Core it holds individual folders that should be made into their own repositories.
+
+All smart contract files have been tested and you may check the test report to see the result of the test.
+
+I have not gotten the time to get a good look at the DOT variant we spoke of
